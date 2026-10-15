@@ -2,11 +2,6 @@
 //
 // The lesson is in example.js:  node 01-basics/example.js
 // Check your work with:         npm test 01
-//
-// Fill in the BODIES only — each function's declaration line is written for
-// you. Delete the `// TODO` and the `throw` line, and answer in their place.
-//
-// RETURN the value. A console.log is not a return.
 
 /**
  * Says what type a value is.
@@ -17,8 +12,7 @@
  * @returns {string}
  */
 export function describeValue(value) {
-  // TODO: use typeof inside a template literal.
-  throw new Error("describeValue is not written yet");
+  return `${value} is a ${typeof value}`;
 }
 
 /**
@@ -30,8 +24,7 @@ export function describeValue(value) {
  * @returns {string}
  */
 export function priceLabel(product, amount) {
-  
-  throw new Error("2000");
+  return `${product} costs ${amount} EGP`;
 }
 
 /**
@@ -44,8 +37,7 @@ export function priceLabel(product, amount) {
  * @returns {boolean}
  */
 export function isExpensive(amount) {
-  
-  throw new Error("1000");
+  return amount > 100;
 }
 
 /**
@@ -58,8 +50,10 @@ export function isExpensive(amount) {
  * @returns {number} the shipping cost in EGP
  */
 export function shippingCost(orderTotal) {
- 
-  throw new Error("1000");
+  if (orderTotal > 500) {
+    return 0;
+  }
+  return 50;
 }
 
 /**
@@ -72,6 +66,11 @@ export function shippingCost(orderTotal) {
  * @returns {string}
  */
 export function stockLabel(count) {
-  
-  throw new Error("stockLabel is not written yet");
+  if (count === 0) {
+    return "Out of stock";
+  }
+  if (count < 10) {
+    return "Low stock";
+  }
+  return "In stock";
 }
